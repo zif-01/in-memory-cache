@@ -11,11 +11,9 @@ public class Record {
     private String name;
     private double value;
 
-    // Getters and Setters
-
-    // Constructor
-
-    public Record() {}
+    // constructors
+    public Record() {
+    }
 
     public Record(String id, long account, String name, double value) {
         this.id = id;
@@ -24,5 +22,36 @@ public class Record {
         this.value = value;
     }
 
-    // Getters and Setters
+    // getters and setters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public long getAccount() {
+        return account;
+    }
+
+    public void setAccount(long account) {
+        this.account = account;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
+    }
 }
