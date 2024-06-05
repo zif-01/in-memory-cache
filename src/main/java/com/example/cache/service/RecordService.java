@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-import java.util.stream.StreamSupport;
 
 @Service
 public class RecordService {
@@ -31,20 +30,14 @@ public class RecordService {
     }
 
     public Optional<Record> findRecordByAccount(long account) {
-        return StreamSupport.stream(recordRepository.findAll().spliterator(), false)
-                .filter(record -> record.getAccount() == account)
-                .findFirst();
+        return recordRepository.findByAccount(account);
     }
 
     public Optional<Record> findRecordByName(String name) {
-        return StreamSupport.stream(recordRepository.findAll().spliterator(), false)
-                .filter(record -> record.getName().equals(name))
-                .findFirst();
+        return recordRepository.findByName(name);
     }
 
     public Optional<Record> findRecordByValue(double value) {
-        return StreamSupport.stream(recordRepository.findAll().spliterator(), false)
-                .filter(record -> record.getValue() == value)
-                .findFirst();
+        return recordRepository.findByValue(value);
     }
 }
